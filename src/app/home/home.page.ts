@@ -40,7 +40,6 @@ export class HomePage {
     this.count$ = store.select('payload');
 
     this.count$.subscribe((r: any) => {
-      console.log(r)
       this.showNumberItens = r.length
     })
 
@@ -53,8 +52,7 @@ export class HomePage {
   }
 
   increment(prod: CartModel) {
-    let prodPayload = prod
-    this.store.dispatch(increment({ payload: prodPayload }));
+    this.store.dispatch(increment({ payload: prod }));
   }
 
   decrement() {
