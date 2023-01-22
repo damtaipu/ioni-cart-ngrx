@@ -13,8 +13,31 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+
+
+
+  <div>Current Count: {{ showNumberItens }}</div>
+
+  <div *ngFor="let prod of productList">
+    <div>
+      <p>{{prod.prodName}}</p>
+    </div>
+    <ion-button (click)="increment(prod)">
+      Adicionar no carrinho
+    </ion-button>
+
+    <!-- <ion-button (click)="decrement()">
+    Click me
+  </ion-button> -->
+
+
   </div>
+
+
+  <ion-button (click)="reset()">
+    Reset Counter
+  </ion-button>
+
+  
 </ion-content>
